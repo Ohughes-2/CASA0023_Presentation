@@ -1,0 +1,176 @@
+---
+title: "Owen_Work"
+author: "Owen Hughes"
+date: "2026-03-19"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(lubridate)
+
+gantt <- tribble(
+  ~phase,  ~subtask, ~start, ~end, ~goal, ~deliverable,
+
+  # WP1 — Setup
+  "Phase-1", "Attain CBERS-4A Imagery",
+  ymd("2026-05-01"), ymd("2026-06-01"),
+  "Organize resources.",
+  "CBERS-4A data Digital Environment",
+  
+  "Phase-1", "Initial image analysis",
+  ymd("2026-05-01"), ymd("2026-07-01"),
+  "Organize resources.",
+  "CBERS-4A data Digital Environment",
+
+  "Phase-1", "Link GIS to IMPLURB",
+  ymd("2026-06-01"), ymd("2026-07-01"),
+  "Organize resources.",
+  "CBERS-4A data Digital Environment",
+
+  # WP2 — Construction
+  "Phase-2", "Imagery Object creation",
+  ymd("2026-07-01"), ymd("2026-08-1"),
+  "Create and train model.",
+  "Early stage informal housing identification model",
+
+  "Phase-2", "Compute Difference indices",
+  ymd("2026-07-15"), ymd("2026-09-01"),
+  "Create and train the model.",
+  "Early stage informal housing identification model",
+
+  "Phase-2", "Train model",
+  ymd("2026-08-01"), ymd("2026-10-01"),
+  "Create and train the model.",
+  "Early stage informal housing identification model",
+
+  # WP3 — Application
+  "Phase-3", "Hire and Train technicians",
+  ymd("2026-10-01"), ymd("2026-12-01"),
+  "Facilitate cooridination between us, IMPLURB, and Civil Defense",
+  "Trained staff & interdepartmental communcication",
+
+  "Phase-3", "Early Warning dashboard",
+  ymd("2026-11-01"), ymd("2027-02-01"),
+  "Facilitate cooridination between us, IMPLURB, and Civil Defense",
+  "Trained staff & interdepartmental communcication",
+
+  "Phase-3", "Automatically alert CD",
+  ymd("2026-12-01"), ymd("2027-03-01"),
+  "Facilitate cooridination between us, IMPLURB, and Civil Defense",
+  "Trained staff & interdepartmental communcication"
+)
+
+```
+
+
+```{r}
+#library(tidyverse)
+#ibrary(lubridate)
+library(ggplot2)
+
+task_order <- c(
+  "Attain CBERS-4A Imagery",
+  "Initial image analysis",
+  "Link GIS to IMPLURB",
+  "Imagery Object creation",
+  "Compute Difference indices",
+  "Train model",
+  "Hire and Train technicians",
+  "Early Warning dashboard",
+  "Automatically alert CD"
+)
+
+custom_cols <- c(
+  "Phase-1" = "#020E54",
+  "Phase-2" = "#A6DEAE",
+  "Phase-3" = "#FF700A"
+)
+
+gantt <- gantt %>%
+  mutate(
+    subtask = factor(subtask, levels = rev(task_order))
+  )
+
+ggplot(gantt, aes(y = subtask, x = start, xend = end, color = phase)) +
+  geom_segment(aes(yend = subtask), linewidth = 6, lineend = "round") +
+  scale_color_manual(values = custom_cols) +   # clearer WP separation
+  scale_x_date(
+    date_breaks = "2 months",
+    date_labels = "%b\n%Y"                  # stacked labels for readability
+  ) +
+  labs(
+    title = "Manaus Informal Growth
+Early Warning System",
+    x = "",
+    y = NULL,
+    color = ""
+  ) +
+  theme_minimal(base_family = "sans", base_size = 14) +
+  theme(
+    plot.title = element_text(size = 18, face = "bold", hjust = 0.5, margin = margin(b = 20)),
+    axis.text.x = element_text(angle = 0, vjust = 1, hjust = 0.5, size = 10),
+    axis.text.y = element_text(size = 11),
+    panel.grid.major.y = element_blank(),
+    legend.position = "bottom",
+    plot.margin = margin(20, 20, 20, 20)
+  )
+
+ggsave("my_plot.png", plot = p, width = 8, height = 6, dpi = 300)
+
+```
+```{r}
+task_order <- c(
+  "Attain CBERS-4A Imagery",
+  "Initial image analysis",
+  "Link GIS to IMPLURB",
+  "Imagery Object creation",
+  "Compute Difference indices",
+  "Train model",
+  "Hire and Train technicians",
+  "Early Warning dashboard",
+  "Automatically alert CD"
+)
+
+custom_cols <- c(
+  "Phase-1" = "#020E54",
+  "Phase-2" = "#A6DEAE",
+  "Phase-3" = "#FF700A"
+)
+
+# Ensure gantt exists and reorder factor
+gantt <- gantt %>%
+  mutate(
+    subtask = factor(subtask, levels = rev(task_order))
+  )
+
+# Store plot in object p
+p <- ggplot(gantt, aes(y = subtask, x = start, xend = end, color = phase)) +
+  geom_segment(aes(yend = subtask), linewidth = 6, lineend = "round") +
+  scale_color_manual(values = custom_cols) +
+  scale_x_date(
+    date_breaks = "2 months",
+    date_labels = "%b\n%Y"
+  ) +
+  labs(
+    title = "Manaus Informal Growth\nEarly Warning System",
+    x = "",
+    y = NULL,
+    color = ""
+  ) +
+  theme_minimal(base_family = "sans", base_size = 14) +
+  theme(
+    plot.title = element_text(size = 18, face = "bold", hjust = 0.5, margin = margin(b = 20)),
+    axis.text.x = element_text(vjust = 1, hjust = 0.5, size = 10),
+    axis.text.y = element_text(size = 11),
+    panel.grid.major.y = element_blank(),
+    legend.position = "bottom",
+    plot.margin = margin(20, 20, 20, 20)
+  )
+
+# Save the plot
+ggsave("gantt.png", plot = p, width = 8, height = 6, dpi = 300)
+
+```
+
+
