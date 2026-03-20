@@ -218,7 +218,7 @@ ggplot(budget, aes(x = 2, y = Percent, fill = LegendLabel)) +
   theme_void() +
   labs(
     title = "Year 1 Salary/Expenditure:",
-    subtitle = "          R$909,520, \u00A3130,000",
+    subtitle = "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0R$909,520, \u00A3130,000",
     fill = "Role (Annual Cost)"
   ) +
   theme(
@@ -228,7 +228,7 @@ ggplot(budget, aes(x = 2, y = Percent, fill = LegendLabel)) +
 
 
 ggsave(
-  filename = "expenditure_donut3.png",
+  filename = "expenditure_donut5.png",
   width = 8,
   height = 8,
   dpi = 300,
