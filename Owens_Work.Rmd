@@ -120,57 +120,121 @@ ggsave("my_plot.png", plot = p, width = 8, height = 6, dpi = 300)
 
 ```
 ```{r}
-task_order <- c(
-  "Attain CBERS-4A Imagery",
-  "Initial image analysis",
-  "Link GIS to IMPLURB",
-  "Imagery Object creation",
-  "Compute Difference indices",
-  "Train model",
-  "Hire and Train technicians",
-  "Early Warning dashboard",
-  "Automatically alert CD"
+
+
+library(tidyverse)
+library(scales)
+library(colorspace)
+
+
+base_gis   <- "#020E54"
+base_it    <- "#3A6D3D"
+base_equip <- "#FF700A"
+
+gis_col   <- lighten(base_gis,   seq(0, 0.4, length.out = 3))
+it_col    <- lighten(base_it,    seq(0, 0.4, length.out = 3))
+equip_col <- lighten(base_equip, seq(0, 0.3, length.out = 2))
+
+
+budget <- tribble(
+  ~Category,   ~Role,                   ~AnnualCost,
+  "GIS",       "Project Manager",         240000,
+  "GIS",       "GIS Technician 1",        108000,
+  "GIS",       "GIS Technician 2",        108000,
+
+  "IT",        "Data Engineer",           240000,
+  "IT",        "IT Manager",               91680,
+  "IT",        "System Administrator",     69840,
+
+  "Equipment", "Workstations",             42000,
+  "Equipment", "Cloud/Storage",            10000
 )
 
-custom_cols <- c(
-  "Phase-1" = "#020E54",
-  "Phase-2" = "#A6DEAE",
-  "Phase-3" = "#FF700A"
-)
 
-# Ensure gantt exists and reorder factor
-gantt <- gantt %>%
+budget <- budget %>%
   mutate(
-    subtask = factor(subtask, levels = rev(task_order))
+    Role = factor(Role, levels = c(
+      # GIS (blue)
+      "Project Manager",
+      "GIS Technician 1",
+      "GIS Technician 2",
+
+      # IT (green)
+      "Data Engineer",
+      "IT Manager",
+      "System Administrator",
+
+      # Equipment (orange)
+      "Workstations",
+      "Cloud/Storage"
+    ))
   )
 
-# Store plot in object p
-p <- ggplot(gantt, aes(y = subtask, x = start, xend = end, color = phase)) +
-  geom_segment(aes(yend = subtask), linewidth = 6, lineend = "round") +
-  scale_color_manual(values = custom_cols) +
-  scale_x_date(
-    date_breaks = "2 months",
-    date_labels = "%b\n%Y"
-  ) +
+
+budget <- budget %>%
+  arrange(Role) %>%   # ensures GIS → IT → Equipment order
+  group_by(Category) %>%
+  mutate(Color = case_when(
+    Category == "GIS"       ~ gis_col[row_number()],
+    Category == "IT"        ~ it_col[row_number()],
+    Category == "Equipment" ~ equip_col[row_number()]
+  )) %>%
+  ungroup()
+
+
+budget <- budget %>%
+  mutate(
+    Percent = AnnualCost / sum(AnnualCost)
+  )
+
+
+budget <- budget %>%
+  mutate(
+    LegendLabel = paste0(Role, " — R$ ", comma(AnnualCost))
+  )
+
+
+budget <- budget %>%
+  arrange(Role) %>%   # <-- ensures correct grouping order
+  mutate(
+    LegendLabel = factor(LegendLabel, levels = LegendLabel)
+  )
+
+color_map <- budget %>%
+  arrange(Role) %>%
+  select(LegendLabel, Color) %>%
+  deframe()
+
+
+ggplot(budget, aes(x = 2, y = Percent, fill = LegendLabel)) +
+  
+  geom_col(color = "white", width = 1) +
+  coord_polar(theta = "y") +
+  scale_fill_manual(values = color_map) +
+  
+  # Donut hole
+  xlim(0.5, 2.5) +
+  
+  theme_void() +
   labs(
-    title = "Manaus Informal Growth\nEarly Warning System",
-    x = "",
-    y = NULL,
-    color = ""
+    title = "Year 1 Salary/Expenditure:",
+    subtitle = "          R$909,520, \u00A3130,000",
+    fill = "Role (Annual Cost)"
   ) +
-  theme_minimal(base_family = "sans", base_size = 14) +
   theme(
-    plot.title = element_text(size = 18, face = "bold", hjust = 0.5, margin = margin(b = 20)),
-    axis.text.x = element_text(vjust = 1, hjust = 0.5, size = 10),
-    axis.text.y = element_text(size = 11),
-    panel.grid.major.y = element_blank(),
-    legend.position = "bottom",
-    plot.margin = margin(20, 20, 20, 20)
+    plot.title = element_text(size = 18, face = "bold", hjust = 0.5),
+    legend.text = element_text(size = 10)
   )
 
-# Save the plot
-ggsave("gantt.png", plot = p, width = 8, height = 6, dpi = 300)
+
+ggsave(
+  filename = "expenditure_donut3.png",
+  width = 8,
+  height = 8,
+  dpi = 300,
+  bg = "white"
+)
+
 
 ```
-
 
