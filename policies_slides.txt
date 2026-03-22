@@ -1,0 +1,134 @@
+
+---
+output:
+  xaringan::moon_reader:
+    seal: false
+    css: "dnmye_theme.css"
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width= 9, fig.height = 3.5, fig.retina = 3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE
+)
+
+library(xaringanExtra)
+library(xaringanthemer)
+
+use_panelset()
+use_progress_bar(color = "#252C4F")
+use_tile_view()
+
+style_mono_light(
+  outfile = "dnmye_theme.css",
+  header_font_google = google_font('Encode Sans'),
+  text_font_google   = google_font('Roboto'),
+  code_font_google   = google_font('IBM Plex Mono'),
+  base_color = "#252C4F",
+  background_color = "#FFFFFF",
+  title_slide_background_position = "95% 5%",
+  title_slide_background_size = "200px"
+)
+```
+
+
+class: center, middle
+
+<div style="display: flex; align-items: center; justify-content: center; gap: 40px; margin-top: 60px;">
+  <div style="background: #252C4F; color: white; padding: 30px 40px; border-radius: 10px; font-size: 1.4em; font-weight: bold; max-width: 280px; text-align: center;">
+    Benefits to the Community
+  </div>
+  <div style="font-size: 3em; color: #252C4F; font-weight: bold;">
+    &#8596;
+  </div>
+  <div style="background: #252C4F; color: white; padding: 30px 40px; border-radius: 10px; font-size: 1.4em; font-weight: bold; max-width: 280px; text-align: center;">
+    Development Agendas
+  </div>
+</div>
+
+---
+class: center, middle
+
+<div style="display: flex; flex-direction: column; align-items: center; gap: 0px;">
+  <div style="background: #252C4F; color: white; padding: 20px 60px; border-radius: 10px; font-size: 1.6em; font-weight: bold;">
+    Development Agendas
+  </div>
+  <div style="display: flex; gap: 80px; align-items: flex-start; justify-content: center; margin-top: 10px;">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+      <div style="font-size: 2em; color: #252C4F; transform: rotate(30deg); display: inline-block;">&#8595;</div>
+      <div style="background: #f0f2f8; border: 2px solid #252C4F; color: #252C4F; padding: 16px 32px; border-radius: 8px; font-size: 1.2em; font-weight: bold;">
+        Global
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+      <div style="font-size: 2em; color: #252C4F;">&#8595;</div>
+      <div style="background: #f0f2f8; border: 2px solid #252C4F; color: #252C4F; padding: 16px 32px; border-radius: 8px; font-size: 1.2em; font-weight: bold;">
+        National
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+      <div style="font-size: 2em; color: #252C4F; transform: rotate(-30deg); display: inline-block;">&#8595;</div>
+      <div style="background: #f0f2f8; border: 2px solid #252C4F; color: #252C4F; padding: 16px 32px; border-radius: 8px; font-size: 1.2em; font-weight: bold;">
+        Local
+      </div>
+    </div>
+  </div>
+</div>
+
+---
+
+## Alignment with Development Goals
+
+.panelset[
+.panel[.panel-name[Global]
+
+### UN Sustainable Development Goals (SDGs)
+
+* **SDG 6:** Ensure availability and sustainable management of water and sanitation for all.
+* **SDG 11:** Make cities and human settlements inclusive, safe, resilient, and sustainable.
+
+<div style="text-align: center;">
+<img src="https://go-goals.org/wp-content/uploads/2017/03/E_SDG-goals_icons-individual-rgb-06.png" width="120px" style="display: inline-block; margin-right: 20px;" />
+<img src="https://go-goals.org/wp-content/uploads/2017/03/E_SDG-goals_icons-individual-rgb-11.png" width="120px" style="display: inline-block;" />
+</div>
+
+> **Project Impact:** Monitoring palafitos directly supports **Target 11.1** (access to adequate, safe, and affordable housing and basic services) by providing data on vulnerable informal settlements.
+
+]
+
+.panel[.panel-name[National]
+
+### City Statute (Federal Law 10.257/2001)
+
+* **Art. 2, I:** Guarantees the right to sustainable cities, including urban land, housing, and environmental sanitation.
+* **Art. 2, IV:** Mandates democratic management through the planning and control of land use.
+* **Art. 42, I:** Requires a mandatory Master Plan for cities with over 20,000 inhabitants (like Manaus).
+
+> **Project Impact:** Remote sensing provides the "control of land use" required by federal law, allowing the Executive Power to fulfill its duty of urban oversight and infrastructure planning.
+
+]
+
+.panel[.panel-name[Local]
+
+### Manaus Master Plan (Plano Diretor, 2021)
+
+* **Art. 25, III:** Focuses on preventing environmental degradation and protecting watercourse banks from irregular squatting.
+* **Art. 32, V:** Mandates the **Social Housing Policy** to resettle low-income populations from risk areas to safer locations with better infrastructure.
+* **Art. 111:** Defines **Areas of Special Social Interest (AEIS)**.
+
+> **Project Impact:** By using Remote Sensing to identify growth early, the city can transition from *reacting* to irregular slums to *proactively* declaring AEIS for planned, dignified housing.
+]
+]
+
+```
