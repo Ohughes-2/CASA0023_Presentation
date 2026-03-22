@@ -256,7 +256,57 @@ background-size: contain
 background-position: center
 background-repeat: no-repeat
 
+
 ---
+
+# Integration into city management
+
+.pull-left[
+
+**Urban Planning**
+
++ Integrated into the Planning Information System
+
+  + Housing
+  
+  + Transport
+  
+  + Public Services
+
++ Made available through GIS services and dashboards 
+
+**Mitigation**
+
++ Early warning system to halt irregular building before consolidation
+
+]
+
+.pull-right[
+
+**Risk and Resilience**
+
++ Integrated into Rapid Response Systems 
+
+
+**Open Data and Open Government**
+
++ Open Data Portal
+
++ Transparency 
+
+
+**Capacity Building and Operational Sustainability**
+
++ Training municipal staff
+
++ Definition of User protocols and documentation
+
++ Open workshops
+
+]
+
+---
+
 
 class:  center
 
