@@ -159,6 +159,12 @@ Santos et al demonstrated use of optical EO imagery from China-Brazil Resources 
 
 ---
 
+class: inverse center middle
+
+# Schedule and Budget
+
+---
+
 background-image: url('gantt3.png')
 background-size: contain
 background-position: center
@@ -193,16 +199,18 @@ Project Viability report of accuracy and utility for the Mayor of Manaus
 class:middle
 
 <div style="position:relative; display:flex; align-items:flex-start; gap:1.2rem; width:100%; padding:0.6rem 0;">
+
+  <!-- TEXT COLUMN -->
   <div style="flex:1; text-align:left;">
     <h1 style="margin:0 0 0.6rem;">Stakeholders</h1>
 
-    <p style="margin:0.2rem 0 0;"><strong>IMPLURB</strong></p>
+    <p style="margin:0.2rem 0 0;"><strong>IMPLURB</strong><sup>9</sup></p>
     <ul style="margin:0.2rem 0 0 1.1rem; line-height:1.5;">
       <li>Owners of the data</li>
       <li>Enforcers of land use laws</li>
     </ul>
 
-    <p style="margin:0.6rem 0 0;"><strong>Civil Defense (CD)</strong></p>
+    <p style="margin:0.6rem 0 0;"><strong>Civil Defense (CD)</strong><sup>7</sup></p>
     <ul style="margin:0.2rem 0 0 1.1rem; line-height:1.5;">
       <li>Provide natural disaster aid</li>
       <li>Leads informal housing growth prevention</li>
@@ -216,8 +224,8 @@ class:middle
 
     <p style="margin:0.6rem 0 0;"><strong>International Organizations</strong></p>
     <ul style="margin:0.2rem 0 0 1.1rem; line-height:1.5;">
-      <li>Inter‑American Development Bank (IDB)</li>
-      <li>International Finance Corporation (IFC)
+      <li>Inter‑American Development Bank (IDB)<sup>8</sup></li>
+      <li>International Finance Corporation (IFC)<sup>10</sup>
         <ul style="margin:0.2rem 0 0 1rem;">
           <li>Often fund infrastructure and development projects</li>
           <li>Potential sources of future funding</li>
@@ -226,19 +234,20 @@ class:middle
     </ul>
   </div>
 
-  <!-- Image column pushed up -->
+  <!-- IMAGE COLUMN (now inside the flex container) -->
   <div style="flex:0 0 36%; text-align:center; align-self:flex-start; margin-top:0;">
     <img src="stakeholders.png" alt="Stakeholders logos and photo"
          style="max-width:100%; max-height:60vh; object-fit:contain; display:block; margin:0 auto;">
   </div>
 
-  <!-- Bottom-right sidenote with links -->
+  <!-- BOTTOM-RIGHT IMAGE SOURCES -->
   <div style="position:absolute; right:0.8rem; bottom:0.6rem; font-size:0.72rem; color:#333; text-align:right; max-width:34%; line-height:1.15; pointer-events:auto;">
-    <strong style="display:block; font-size:0.78rem; margin-bottom:0.12rem;">Sources</strong>
+    <strong style="display:block; font-size:0.78rem; margin-bottom:0.12rem;">Image Sources</strong>
     <a href="https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/defesa-civil-no-brasil-e-no-mundo-1/defesa-civil-no-brasil" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:underline; display:block; margin-bottom:0.12rem;">Defesa Civil — gov.br</a>
     <a href="https://www.facebook.com/people/Implurb/100064562117983/#" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:underline; display:block; margin-bottom:0.12rem;">Implurb — Facebook</a>
     <a href="https://1792exchange.com/company/inter-american-development-bank/" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:underline; display:block;">Inter‑American Development Bank — 1792exchange</a>
   </div>
+
 </div>
 
 ---
@@ -267,8 +276,26 @@ class:  center
 
 [6] Karasiak, N., Dejoux, JF., Monteil, C. et al. Spatial dependence between training and test sets: another pitfall of classification accuracy assessment in remote sensing. Mach Learn 111, 2715–2740 (2022).]
 
+---
+
+class:  center
 
 
+# Schedule and Budget References
+
+[7] COORDENADORIA ESTADUAL DA DEFESA CIVIL (no date). Available at: https://www.defesacivil.pr.gov.br/ (Accessed: March 22, 2026).
+
+[8] IDB | Inter American Development Bank (no date). Available at: https://www.iadb.org/en (Accessed: March 22, 2026).
+
+[9] IMPLURB | Prefeitura de Manaus (no date). Available at: https://www.manaus.am.gov.br/implurb/ (Accessed: March 22, 2026).
+
+[10] International Finance Corporation (IFC) (no date). Available at: https://www.ifc.org/en/home (Accessed: March 22, 2026).
+
+#### Budget References
+
+Melhores Computadores para Engenharia até 10 mil reais em 2025 | elite computadores (no date). Available at: https://www.elitecomputadores.com.br/melhores-computadores-para-engenharia-ate-10-mil-reais-em-2025 (Accessed: March 22, 2026).
+
+Salários dos programadores Manaus (Brasil) en reales brasileños (no date). Available at: https://bdeex.com/pt-br/brazil/manaus/?type=it (Accessed: March 22, 2026).
 
 
   
