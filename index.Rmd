@@ -56,6 +56,8 @@ knitr::opts_chunk$set(
 # We upload package xaringanExtra.
 library(xaringanExtra)
 
+use_panelset()
+
 # We add a progress bar.
 use_progress_bar(color = "#252C4F")
 
@@ -100,6 +102,181 @@ class:inverse, middle
 background-image: url("BRAZIL_IMG.png")
 background-position: center
 background-size: cover
+
+
+---
+
+# Manaus: The Amazon's Largest City
+
+<div style="display: flex; align-items: flex-start; gap: 20px; margin-top: -50px;">
+
+  <div style="flex: 0 0 55%;">
+    <h3>- Located in the heart of the Amazon alongside Rio Negro, with a complex network of Igarapés running through the city</h3>
+    <h3>- Population has exploded from 300,000 in 1970 to over 2 million people today</h3>
+  </div>
+
+  <div style="flex: 0 0 45%; margin-top: 40px;">
+    <img src="Images_Emily/manaus_timelapse.gif" style="width: 100%; border-radius: 5px;" />
+  </div>
+
+</div>
+
+<h3 style="margin-top: 10px;">- Growth lacked formal planning, making informal settlements a 'tradition'</h3>
+
+---
+
+<style>
+/* This only overrides the variables for this specific slide's panelset */
+.panelset {
+   --panel-tab-font-size: 32px;       /* Change this number to go even bigger */
+   --panel-tab-color: #252C4F;        /* Keeps the text white */
+   --panel-tab-inactive-opacity: 0.5; /* Makes unselected tabs faded */
+   --panel-tab-active-foreground: #252C4F;
+}
+
+/* Adds a tiny bit of breathing room below the big tabs */
+.panel-tabs {
+   margin-bottom: 30px !important;
+}
+</style>
+
+# Palafitas: Precarious Settlements
+
+.panelset[
+.panel[.panel-name[Banks of large rivers]
+<div style="float: left; width: 70%; padding-top: 5px;">
+<img src="Images_Emily/Igrapes.png" style="width: 70%; border-radius: 5px;" />
+</div>
+]
+
+.panel[.panel-name[Igarapés]
+<div style="float: left; width: 50%; padding-top: 20px;">
+  <img src="Images_Emily/Igrapes_narrow.jpg" style="width: 100%; border-radius: 10px;" />
+</div>
+]
+
+.panel[.panel-name[Wetlands & Urban Plateaus]
+<div style="float: left; width: 60%;">
+  <img src="Images_Emily/Wetland.png" style="width: 100%; border-radius: 10px;" />
+</div>
+]
+
+] <div style="clear: both;"></div>
+
+---
+class:center, middle
+
+# What environmental risks do Palafitas face?
+
+---
+class: center
+
+### Stilts dug into the riverbed/banks
+
+---
+class:center
+
+### Stilts dug into the riverbed/banks
+<div style="text-align: center; font-size: 2.5em; margin: -10px 0;">
+  <span>&#8601;</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>&#8600;</span> </div>
+  
+.pull-left[
+### Debris (natural & rubbish) flowing in the river gets stuck in stilts
+]
+
+.pull-right[
+### Sediment is suspended in water and settles around base of the houses
+]
+
+---
+class:center
+
+### Stilts dug into the riverbed/banks
+<div style="text-align: center; font-size: 2.5em; margin: -10px 0;">
+  <span>&#8601;</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>&#8600;</span> </div>
+  
+.pull-left[
+### Debris (natural & rubbish) flowing in the river gets stuck in stilts
+]
+
+.pull-right[
+### Sediment is suspended in water and settles around base of the houses
+]
+
+<div style="text-align: center; font-size: 2.5em; margin: -10px 0;">
+  <span>&#8600;</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>&#8601;</span> </div>
+
+### Blocks natural drainage systems
+
+---
+class: center
+
+### Stilts dug into the riverbed/banks
+<div style="text-align: center; font-size: 2.5em; margin: -10px 0;">
+  <span>&#8601;</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>&#8600;</span> </div>
+  
+.pull-left[
+### Debris (natural & rubbish) flowing in the river gets stuck in stilts
+]
+
+.pull-right[
+### Sediment is suspended in water and settles around base of the houses
+]
+
+<div style="text-align: center; font-size: 2.5em; margin: -10px 0;">
+  <span>&#8600;</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>&#8601;</span> </div>
+
+### Blocks natural drainage systems
+
+<div style="text-align: center; font-size: 2.5em;">&darr;</div>
+### Increases flood chance & severity
+---
+
+# Vulnerability to disasters
+
+<div style="width: 100%; display: flex; align-items: flex-start; gap: 20px; margin-top: -40px;">
+
+  <div style="flex: 0 0 60%; text-align: left;">
+    <h3>- Lack of basic services &rarr; waste dumped into waterways</h3>
+    <h3>- Area is prone to waterborne diseases & landslides</h3>
+    <h3>- More natural disaster alerts than any other Brazilian city (2024)</h3>
+    <h3>- 438 at-risk areas + 112,000 people in precarious settlements</h3>
+  </div>
+
+  <div style="flex: 0 0 40%; text-align: center;">
+    <img src="Images_Emily/Palafitas_rubbish.png" style="width: 100%; border-radius: 5px; margin-bottom: 10px;" />
+    <img src="Images_Emily/Palafitas_flood.png" style="width: 100%; border-radius: 5px;" />
+  </div>
+
+</div>
+
+<div style="clear: both;"></div>
+---
+# What can be done?
+
+--
+## 1. Map existing informal settlements
+#### - Inform re-urbanization programs (e.g., improving draining infrastructure)
+#### - Environmental rehabilitation (e.g., rubbish clearing, reinforce embankments)
+
+--
+## 2. Create a warning system to detect land being cleared for new informal settlements
+#### - Stop people settling in dangerous areas before it is politically difficult to remove them
+#### - Encourage these people moving into social housing
+
+---
+# Benefits to the community
+
+### 1. Improve Life Safety
+#### - Increase resilience during floods
+#### - Reduce prevelance of waterborn diseases
+
+### 2. Environmental Preservation
+#### - Protect ecological corridors (rivers & grapés)
+
+### 3. Social Inclusion
+#### - Provide people with property titles and basic services (water, light, sewage) from the start of an occupation through planned land subdivision
+
 
 ---
 class: inverse center middle
