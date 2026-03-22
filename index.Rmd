@@ -91,10 +91,75 @@ style_mono_light(outfile = "dnmye_theme.css", # CSS FILE
                  text_slide_number_font_size = "16px")
 ```
 
+---
+class: inverse center middle
+
+# WORKFLOW
 
 ---
 
-background-image: url('gantt.png')
+## Classification by Multi-Spectral Optical Imagery
+
+Santos et al demonstrated use of optical EO imagery from China-Brazil Resources Satellite-4A (CBERS-4A) for classifying urban fabric typologies in the Amazon, including precarious settlements<sup>1</sup>:
+1. crop to study area
+2. combine panchromatic and multi-spectral images
+3. calculate indices as new channels
+  * Normalized Difference Vegetation Index (NVDI)
+  * Normalized Difference Roof Index (NDRI)
+  * Bare Soil Area Index (BSAI)
+4. calculate texture metrics with 25x25 kernel
+  * variance
+  * entropy
+  * contrast
+  * correlation
+  * uniformity
+5. generating objects with mean-shift clustering
+6. classification with decision tree model
+
+
+---
+
+## Weaknesses of That Approach
+
+1. CBERS-4A only captures 8m resolution imagery once every 31 days<sup>1</sup>
+2. Clouds are common in the rainforest<sup>2</sup>
+3. Texture metrics with such a large kernel and and objects with minimum size may miss very small incursions
+4. The decision tree model implemented by Santos et al 2022 does not output a probabilities, only a hard classification
+5. We really only need a binary classification
+
+
+---
+
+## Improvements/Solutions/Alternatives
+
+1. Sentinel-2 has nearly the same resolution (10m) and returns every 5 days<sup>3</sup>
+2. Sentinel-1 carries C-band SAR and returns every 6 days<sup>4</sup>
+3. Moya et al. demonstrated that pixel-wise classification by SAR can identify changes quickly in Lima, Peru<sup>5</sup>
+  * Simple threshold based on historical mean and standard deviation in VV polarization
+  * Classic and cheap/fast image processing operations
+    + opening
+    + closing
+    + blob analysis
+  * Identified 84% of informal settlement identified by visual inspection
+
+---
+
+## Our Synthesized Approach
+
+1. Train pixel-wise Random Forest classifier on Sentinel-2 and Sentinel-1 data in vicinity of Manaus
+  * Scale SAR from 5m resolution to 10m to match multi-spectral resolution
+  * Only two classes (nature and cleared/developed)
+  * Indices from multi-spectral
+  * Output predicted probability
+  * Spatial CV to avoid overfitting and an optimistic bias in performance metrics<sup>6</sup>
+2. Calculate the predicted probability for each pixel in designated sensitive areas every time Sentinel-1 or Sentinel-2 passes overhead and record for posterity
+3. Work with officials to determine suitable predicted probability threshold to balance TPR and FPR
+4. Experimentally determine suitable opening and closing kernel size if neccessary and minimum blob size
+5. Compare each new set of blobs to the previous ones and alert local officials to new or expanded blobs
+
+---
+
+background-image: url('gantt3.png')
 background-size: contain
 background-position: center
 background-repeat: no-repeat
@@ -182,6 +247,25 @@ background-size: contain
 background-position: center
 background-repeat: no-repeat
 
+---
+
+class:  center
+
+
+# Workflow References
+
+.footnote[[1] Santos, B. D. dos, C. M. D. de Pinho, G. E. T. Oliveira, et al. (2022). "Identifying Precarious Settlements and Urban Fabric Typologies Based on GEOBIA and Data Mining in Brazilian Amazon Cities". En. In: Remote Sensing 14.3, p. 704. ISSN: 2072-4292. DOI: 10.3390/rs14030704. URL: https://www.mdpi.com/2072-4292/14/3/704 (visited on Mar. 20, 2026).
+
+[2] Assunção, J., C. Gandour, and R. Rocha (2017). "DETERring deforestation in the Amazon: environmental monitoring and law enforcement".
+
+[3] Earth Science Data Systems, NASA. “Sentinel-2 Multispectral Imager | NASA Earthdata.” Instrument. Earth Science Data Systems, NASA, September 5, 2024. https://www.earthdata.nasa.gov/data/instruments/sentinel-2-msi.
+
+[4] Earth Science Data Systems, NASA. “Synthetic Aperture Radar (SAR) | NASA Earthdata.” Data Basics. Earth Science Data Systems, NASA, May 18, 2021. https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/sar.
+
+
+[5] Moya, L., F. Garcia, C. Gonzales, et al. (2022). "Brief communication: Radar images for monitoring informal urban settlements in vulnerable zones in Lima, Peru". In: Natural Hazards and Earth System Sciences 22.1, pp. 65-70. ISSN: 1561-8633. DOI: 10.5194/nhess-22-65-2022.
+
+[6] Karasiak, N., Dejoux, JF., Monteil, C. et al. Spatial dependence between training and test sets: another pitfall of classification accuracy assessment in remote sensing. Mach Learn 111, 2715–2740 (2022).]
 
 
 

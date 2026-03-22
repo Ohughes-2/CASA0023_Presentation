@@ -13,7 +13,7 @@ gantt <- tribble(
   ~phase,  ~subtask, ~start, ~end, ~goal, ~deliverable,
 
   # WP1 — Setup
-  "Phase-1", "Attain CBERS-4A Imagery",
+  "Phase-1", "Attain Sentinel Imagery",
   ymd("2026-05-01"), ymd("2026-06-01"),
   "Organize resources.",
   "CBERS-4A data Digital Environment",
@@ -70,7 +70,7 @@ gantt <- tribble(
 library(ggplot2)
 
 task_order <- c(
-  "Attain CBERS-4A Imagery",
+  "Attain Sentinel Imagery",
   "Initial image analysis",
   "Link GIS to IMPLURB",
   "Imagery Object creation",
@@ -116,9 +116,37 @@ Early Warning System",
     plot.margin = margin(20, 20, 20, 20)
   )
 
-ggsave("my_plot.png", plot = p, width = 8, height = 6, dpi = 300)
+#ggsave("gantt2.png", plot = p, width = 8, height = 6, dpi = 300)
 
 ```
+```{r}
+p <- ggplot(gantt, aes(y = subtask, x = start, xend = end, color = phase)) +
+  geom_segment(aes(yend = subtask), linewidth = 6, lineend = "round") +
+  scale_color_manual(values = custom_cols) +
+  scale_x_date(
+    date_breaks = "2 months",
+    date_labels = "%b\n%Y"
+  ) +
+  labs(
+    title = "Manaus Informal Growth\nEarly Warning System",
+    x = "",
+    y = NULL,
+    color = ""
+  ) +
+  theme_minimal(base_family = "sans", base_size = 14) +
+  theme(
+    plot.title = element_text(size = 18, face = "bold", hjust = 0.5, margin = margin(b = 20)),
+    axis.text.x = element_text(size = 10),
+    axis.text.y = element_text(size = 11),
+    panel.grid.major.y = element_blank(),
+    legend.position = "bottom",
+    plot.margin = margin(20, 20, 20, 20)
+  )
+
+ggsave("gantt3.png", plot = p, width = 8, height = 6, dpi = 300)
+
+```
+
 ```{r}
 
 
@@ -218,17 +246,18 @@ ggplot(budget, aes(x = 2, y = Percent, fill = LegendLabel)) +
   theme_void() +
   labs(
     title = "Year 1 Salary/Expenditure:",
-    subtitle = "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0R$909,520, \u00A3130,000",
+    subtitle = "Totals: R$909,520, \u00A3130,000",
     fill = "Role (Annual Cost)"
   ) +
   theme(
     plot.title = element_text(size = 18, face = "bold", hjust = 0.5),
+    plot.subtitle = element_text(hjust = 0.5),
     legend.text = element_text(size = 10)
   )
 
 
 ggsave(
-  filename = "expenditure_donut5.png",
+  filename = "exp_don.png",
   width = 8,
   height = 8,
   dpi = 300,
