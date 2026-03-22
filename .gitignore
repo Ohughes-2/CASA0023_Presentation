@@ -1,3 +1,9 @@
+.Rprofile
+libs/crosstalk/
+libs/datatables-binding/
+libs/datatables-css/
+libs/dt-core/
+rjavaenv/
 # History files
 .Rhistory
 .Rapp.history
