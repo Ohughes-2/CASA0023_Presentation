@@ -29,17 +29,17 @@ gantt <- tribble(
   "CBERS-4A data Digital Environment",
 
   # WP2 — Construction
-  "Phase-2", "Imagery Object creation",
-  ymd("2026-07-01"), ymd("2026-08-1"),
+  "Phase-2", "Train model",
+  ymd("2026-07-01"), ymd("2026-010-1"),
   "Create and train model.",
   "Early stage informal housing identification model",
 
-  "Phase-2", "Compute Difference indices",
-  ymd("2026-07-15"), ymd("2026-09-01"),
+  "Phase-2", "Determine TPR Threshold",
+  ymd("2026-08-01"), ymd("2026-10-01"),
   "Create and train the model.",
   "Early stage informal housing identification model",
 
-  "Phase-2", "Train model",
+  "Phase-2", "Determine Kernel Blob Size",
   ymd("2026-08-01"), ymd("2026-10-01"),
   "Create and train the model.",
   "Early stage informal housing identification model",
