@@ -13,27 +13,21 @@ output:
       countIncrementalSlides: true
 ---
 
-class:inverse, middle
+class:inverse
 
 background-image: url("MANAUS_IMG.png")
 background-position: center
 background-size: cover
 
-# Remote Sensing for monitoring 
-# urban expansion
-
-## The Case of Manaus (Brazil)
+.pull-left[
 
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
+# Remote Sensing for Monitoring Urban Expansion
+
+### The Case of Manaus (Brazil)
+
+]
 
 
 ```{r setup, include=FALSE}
@@ -103,15 +97,16 @@ background-image: url("BRAZIL_IMG.png")
 background-position: center
 background-size: cover
 
-
 ---
 
 # Manaus: The Amazon's Largest City
 
-<div style="display: flex; align-items: flex-start; gap: 20px; margin-top: -50px;">
+<br>
+
+<div style="display: flex; align-items: flex-start; gap: 17px; margin-top: -50px;">
 
   <div style="flex: 0 0 55%;">
-    <h3>- Located in the heart of the Amazon alongside Rio Negro, with a complex network of Igarapés running through the city</h3>
+    <h3>- Located in the heart of the Amazon alongside the Rio Negro river, with a complex network of Igarapés running through the city</h3>
     <h3>- Population has exploded from 300,000 in 1970 to over 2 million people today</h3>
   </div>
 
@@ -126,7 +121,7 @@ background-size: cover
 ---
 
 <style>
-/* This only overrides the variables for this specific slide's panelset */
+
 .panelset {
    --panel-tab-font-size: 32px;       /* Change this number to go even bigger */
    --panel-tab-color: #252C4F;        /* Keeps the text white */
@@ -134,7 +129,7 @@ background-size: cover
    --panel-tab-active-foreground: #252C4F;
 }
 
-/* Adds a tiny bit of breathing room below the big tabs */
+
 .panel-tabs {
    margin-bottom: 30px !important;
 }
@@ -144,19 +139,19 @@ background-size: cover
 
 .panelset[
 .panel[.panel-name[Banks of large rivers]
-<div style="float: left; width: 70%; padding-top: 5px;">
+<div style="float: center; width: 70%; padding-top: 5px;">
 <img src="Images_Emily/Igrapes.png" style="width: 70%; border-radius: 5px;" />
 </div>
 ]
 
 .panel[.panel-name[Igarapés]
-<div style="float: left; width: 50%; padding-top: 20px;">
-  <img src="Images_Emily/Igrapes_narrow.jpg" style="width: 100%; border-radius: 10px;" />
+<div style="float: center; width: 50%; padding-top: 20px;">
+  <img src="Images_Emily/Igrapes_narrow.jpg" style="width: 100%; border-radius: 10px; class="center"; />
 </div>
 ]
 
 .panel[.panel-name[Wetlands & Urban Plateaus]
-<div style="float: left; width: 60%;">
+<div style="float: center; width: 60%;">
   <img src="Images_Emily/Wetland.png" style="width: 100%; border-radius: 10px;" />
 </div>
 ]
@@ -169,41 +164,54 @@ class:center, middle
 # What environmental risks do Palafitas face?
 
 ---
+
 class: center
 
 ### Stilts dug into the riverbed/banks
 
 ---
+
 class:center
 
 ### Stilts dug into the riverbed/banks
-<div style="text-align: center; font-size: 2.5em; margin: -10px 0;">
+
+<div style="text-align: center; font-size: 2.25em; margin: -10px 0;">
   <span>&#8601;</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>&#8600;</span> </div>
   
 .pull-left[
+
 ### Debris (natural & rubbish) flowing in the river gets stuck in stilts
+
 ]
 
 .pull-right[
+
 ### Sediment is suspended in water and settles around base of the houses
+
 ]
 
 ---
+
 class:center
 
 ### Stilts dug into the riverbed/banks
-<div style="text-align: center; font-size: 2.5em; margin: -10px 0;">
+
+<div style="text-align: center; font-size: 2.25em; margin: -10px 0;">
   <span>&#8601;</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>&#8600;</span> </div>
   
 .pull-left[
+
 ### Debris (natural & rubbish) flowing in the river gets stuck in stilts
+
 ]
 
 .pull-right[
+
 ### Sediment is suspended in water and settles around base of the houses
+
 ]
 
-<div style="text-align: center; font-size: 2.5em; margin: -10px 0;">
+<div style="text-align: center; font-size: 2.25em; margin: -10px 0;">
   <span>&#8600;</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>&#8601;</span> </div>
 
 ### Blocks natural drainage systems
@@ -212,23 +220,29 @@ class:center
 class: center
 
 ### Stilts dug into the riverbed/banks
-<div style="text-align: center; font-size: 2.5em; margin: -10px 0;">
+
+<div style="text-align: center; font-size: 2.25em; margin: -10px 0;">
   <span>&#8601;</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>&#8600;</span> </div>
   
 .pull-left[
+
 ### Debris (natural & rubbish) flowing in the river gets stuck in stilts
+
 ]
 
 .pull-right[
+
 ### Sediment is suspended in water and settles around base of the houses
+
 ]
 
-<div style="text-align: center; font-size: 2.5em; margin: -10px 0;">
+<div style="text-align: center; font-size: 2.25em; margin: -10px 0;">
   <span>&#8600;</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>&#8601;</span> </div>
 
 ### Blocks natural drainage systems
 
-<div style="text-align: center; font-size: 2.5em;">&darr;</div>
+<div style="text-align: center; font-size: 2.25em;">&darr;</div>
+
 ### Increases flood chance & severity
 ---
 
@@ -251,32 +265,46 @@ class: center
 </div>
 
 <div style="clear: both;"></div>
+
 ---
+
 # What can be done?
 
 --
-## 1. Map existing informal settlements
-#### - Inform re-urbanization programs (e.g., improving draining infrastructure)
-#### - Environmental rehabilitation (e.g., rubbish clearing, reinforce embankments)
+
+<br>
+
+### 1. Map existing informal settlements
+
++ #### Inform re-urbanization programs (e.g., improving draining infrastructure)
+
++ #### Environmental rehabilitation (e.g., rubbish clearing, reinforce embankments)
 
 --
-## 2. Create a warning system to detect land being cleared for new informal settlements
-#### - Stop people settling in dangerous areas before it is politically difficult to remove them
-#### - Encourage these people moving into social housing
 
+### 2. Create a warning system to detect land being cleared for new informal settlements
+
++ #### Stop people settling in dangerous areas before consolidation
+
++ #### Encourage these people moving into social housing
 
 ---
+
 # Benefits to the community
 
 ### 1. Improve Life Safety
-#### - Increase resilience during floods
-#### - Reduce prevelance of waterborn diseases
+
++ #### Increase resilience during floods
+
++ #### Reduce prevalence of waterborn diseases
 
 ### 2. Environmental Preservation
-#### - Protect ecological corridors (rivers & grapés)
+
++ #### Protect ecological corridors (rivers & *igrapés*)
 
 ### 3. Social Inclusion
-#### - Provide people with property titles and basic services (water, light, sewage) from the start of an occupation through planned land subdivision
+
++ #### Provide people with property titles and basic services (water, light, sewage) from the start of an occupation through planned land subdivision
 
 
 ---
@@ -378,31 +406,36 @@ class: inverse center middle
 
 ## Classification by Multi-Spectral Optical Imagery
 
-Santos et al demonstrated use of optical EO imagery from China-Brazil Resources Satellite-4A (CBERS-4A) for classifying urban fabric typologies in the Amazon, including precarious settlements<sup>1</sup>:
-1. crop to study area
-2. combine panchromatic and multi-spectral images
-3. calculate indices as new channels
+**Dos Santos et al (2022)** demonstrated use of optical EO imagery from China-Brazil Resources Satellite-4A (CBERS-4A) for classifying urban fabric typologies in the Amazon, including precarious settlements<sup>1</sup>:
+1. **Crop to study area**
+2. **Combine panchromatic and multi-spectral images**
+3. **Calculate indices as new channels**
   * Normalized Difference Vegetation Index (NVDI)
   * Normalized Difference Roof Index (NDRI)
   * Bare Soil Area Index (BSAI)
-4. calculate texture metrics with 25x25 kernel
+4. **Calculate texture metrics with 25x25 kernel**
   * variance
   * entropy
   * contrast
   * correlation
   * uniformity
-5. generating objects with mean-shift clustering
-6. classification with decision tree model
-
+5. **Generating objects with mean-shift clustering**
+6. **Classification with decision tree model**
 
 ---
 
 ## Weaknesses of That Approach
 
+<br>
+
 1. CBERS-4A only captures 8m resolution imagery once every 31 days<sup>1</sup>
+
 2. Clouds are common in the rainforest<sup>2</sup>
+
 3. Texture metrics with such a large kernel and and objects with minimum size may miss very small incursions
-4. The decision tree model implemented by Santos et al 2022 does not output a probabilities, only a hard classification
+
+4. The decision tree model implemented by Dos Santos et al (2022) does not output a probabilities, only a hard classification
+
 5. We really only need a binary classification
 
 
@@ -410,9 +443,13 @@ Santos et al demonstrated use of optical EO imagery from China-Brazil Resources 
 
 ## Improvements/Solutions/Alternatives
 
+<br>
+
 1. Sentinel-2 has nearly the same resolution (10m) and returns every 5 days<sup>3</sup>
+
 2. Sentinel-1 carries C-band SAR and returns every 6 days<sup>4</sup>
-3. Moya et al. demonstrated that pixel-wise classification by SAR can identify changes quickly in Lima, Peru<sup>5</sup>
+
+3. **Moya et al.** demonstrated that pixel-wise classification by SAR can identify changes quickly in Lima, Peru<sup>5</sup>
   * Simple threshold based on historical mean and standard deviation in VV polarization
   * Classic and cheap/fast image processing operations
     + opening
@@ -424,15 +461,21 @@ Santos et al demonstrated use of optical EO imagery from China-Brazil Resources 
 
 ## Our Synthesized Approach
 
+<br>
+
 1. Train pixel-wise Random Forest classifier on Sentinel-2 and Sentinel-1 data in vicinity of Manaus
   * Scale SAR from 5m resolution to 10m to match multi-spectral resolution
   * Only two classes (nature and cleared/developed)
   * Indices from multi-spectral
   * Output predicted probability
   * Spatial CV to avoid overfitting and an optimistic bias in performance metrics<sup>6</sup>
+
 2. Calculate the predicted probability for each pixel in designated sensitive areas every time Sentinel-1 or Sentinel-2 passes overhead and record for posterity
+
 3. Work with officials to determine suitable predicted probability threshold to balance TPR and FPR
-4. Experimentally determine suitable opening and closing kernel size if neccessary and minimum blob size
+
+4. Experimentally determine suitable opening and closing kernel size if necessary and minimum blob size
+
 5. Compare each new set of blobs to the previous ones and alert local officials to new or expanded blobs
 
 ---
@@ -626,4 +669,7 @@ Melhores Computadores para Engenharia até 10 mil reais em 2025 | elite computad
 Salários dos programadores Manaus (Brasil) en reales brasileños (no date). Available at: https://bdeex.com/pt-br/brazil/manaus/?type=it (Accessed: March 22, 2026).
 
 
-  
+---
+class: inverse center middle
+
+# OBRIGADO!
