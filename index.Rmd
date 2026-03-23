@@ -406,50 +406,32 @@ class: inverse center middle
 
 ## Classification by Multi-Spectral Optical Imagery
 
-**Dos Santos et al (2022)** demonstrated use of optical EO imagery from China-Brazil Resources Satellite-4A (CBERS-4A) for classifying urban fabric typologies in the Amazon, including precarious settlements<sup>1</sup>:
-1. **Crop to study area**
-2. **Combine panchromatic and multi-spectral images**
-3. **Calculate indices as new channels**
+Santos et al. demonstrated use of optical EO imagery from China-Brazil Resources Satellite-4A (CBERS-4A) for classifying urban fabric typologies in the Amazon, including precarious settlements<sup>1</sup>:
+1. crop to study area
+2. combine panchromatic and multi-spectral images
+3. calculate indices as new channels
   * Normalized Difference Vegetation Index (NVDI)
   * Normalized Difference Roof Index (NDRI)
   * Bare Soil Area Index (BSAI)
-4. **Calculate texture metrics with 25x25 kernel**
+4. calculate texture metrics with 25x25 kernel
   * variance
   * entropy
   * contrast
   * correlation
   * uniformity
-5. **Generating objects with mean-shift clustering**
-6. **Classification with decision tree model**
-
----
-
-## Weaknesses of That Approach
-
-<br>
-
-1. CBERS-4A only captures 8m resolution imagery once every 31 days<sup>1</sup>
-
-2. Clouds are common in the rainforest<sup>2</sup>
-
-3. Texture metrics with such a large kernel and and objects with minimum size may miss very small incursions
-
-4. The decision tree model implemented by Dos Santos et al (2022) does not output a probabilities, only a hard classification
-
-5. We really only need a binary classification
+5. generating objects with mean-shift clustering
+6. classification with decision tree model
 
 
 ---
 
-## Improvements/Solutions/Alternatives
+## Alternatives/Improvements
 
-<br>
-
-1. Sentinel-2 has nearly the same resolution (10m) and returns every 5 days<sup>3</sup>
-
-2. Sentinel-1 carries C-band SAR and returns every 6 days<sup>4</sup>
-
-3. **Moya et al.** demonstrated that pixel-wise classification by SAR can identify changes quickly in Lima, Peru<sup>5</sup>
+1. Sentinel-2 has nearly the same resolution as CBERS-4A (10 vs 8 m) and returns more often (5 vs 31 days)<sup>3</sup>
+2. We only really need a binary classification, not the object-based classification of urban typology
+3. Clouds are common in the rainforest and block optical EO<sup>2</sup>
+4. Sentinel-1 carries C-band SAR and returns every 6 days<sup>4</sup>
+5. Moya et al. demonstrated that pixel-wise classification by SAR can identify changes quickly in Lima, Peru<sup>5</sup>
   * Simple threshold based on historical mean and standard deviation in VV polarization
   * Classic and cheap/fast image processing operations
     + opening
@@ -461,22 +443,16 @@ class: inverse center middle
 
 ## Our Synthesized Approach
 
-<br>
-
 1. Train pixel-wise Random Forest classifier on Sentinel-2 and Sentinel-1 data in vicinity of Manaus
   * Scale SAR from 5m resolution to 10m to match multi-spectral resolution
   * Only two classes (nature and cleared/developed)
   * Indices from multi-spectral
   * Output predicted probability
   * Spatial CV to avoid overfitting and an optimistic bias in performance metrics<sup>6</sup>
-
 2. Calculate the predicted probability for each pixel in designated sensitive areas every time Sentinel-1 or Sentinel-2 passes overhead and record for posterity
-
-3. Work with officials to determine suitable predicted probability threshold to balance TPR and FPR
-
-4. Experimentally determine suitable opening and closing kernel size if necessary and minimum blob size
-
-5. Compare each new set of blobs to the previous ones and alert local officials to new or expanded blobs
+3. Compare each new analysis to the previous ones and alert local officials to changes
+4. Work with officials to determine suitable predicted probability threshold to balance TPR and FPR
+5. Experimentally determine suitable opening and closing kernel size and minimum blob size if neccessary
 
 ---
 
@@ -619,6 +595,11 @@ background-repeat: no-repeat
 
 
 ---
+class: inverse center middle
+
+# OBRIGADO!
+
+---
 
 
 class:  center
@@ -661,7 +642,3 @@ Melhores Computadores para Engenharia até 10 mil reais em 2025 | elite computad
 Salários dos programadores Manaus (Brasil) en reales brasileños (no date). Available at: https://bdeex.com/pt-br/brazil/manaus/?type=it (Accessed: March 22, 2026).
 
 
----
-class: inverse center middle
-
-# OBRIGADO!
