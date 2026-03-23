@@ -30,7 +30,7 @@ gantt <- tribble(
 
   # WP2 — Construction
   "Phase-2", "Train model",
-  ymd("2026-07-01"), ymd("2026-010-1"),
+  ymd("2026-07-01"), ymd("2026-10-1"),
   "Create and train model.",
   "Early stage informal housing identification model",
 
@@ -39,7 +39,7 @@ gantt <- tribble(
   "Create and train the model.",
   "Early stage informal housing identification model",
 
-  "Phase-2", "Determine Kernel Blob Size",
+  "Phase-2", "Determine Kernel & Blob Size",
   ymd("2026-08-01"), ymd("2026-10-01"),
   "Create and train the model.",
   "Early stage informal housing identification model",
@@ -73,9 +73,9 @@ task_order <- c(
   "Attain Sentinel Imagery",
   "Initial image analysis",
   "Link GIS to IMPLURB",
-  "Imagery Object creation",
-  "Compute Difference indices",
   "Train model",
+  "Determine TPR Threshold",
+  "Determine Kernel & Blob Size",
   "Hire and Train technicians",
   "Early Warning dashboard",
   "Automatically alert CD"
@@ -143,7 +143,7 @@ p <- ggplot(gantt, aes(y = subtask, x = start, xend = end, color = phase)) +
     plot.margin = margin(20, 20, 20, 20)
   )
 
-ggsave("gantt3.png", plot = p, width = 8, height = 6, dpi = 300)
+ggsave("gantt5.png", plot = p, width = 8, height = 6, dpi = 300)
 
 ```
 
